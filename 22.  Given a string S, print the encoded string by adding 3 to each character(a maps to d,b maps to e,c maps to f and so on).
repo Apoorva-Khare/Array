@@ -1,0 +1,28 @@
+'''
+Given a string S, print the encoded string by adding 3 to each character(a maps to d,b maps to e,c maps to f and so on).
+Input Size : 1 <= N <= 100000
+Sample Testcase :
+INPUT
+RADAR
+OUTPUT
+UDGDU
+'''
+def replace_characters(string, k):
+   
+    # Convert the string to a list of characters
+    char_list = list(string)
+     
+    # Iterate over each character in the list
+    for i in range(len(char_list)):
+        ascii_val = (ord(char_list[i]) - ord('A') + k) % 26 + ord('A')
+        char_list[i] = chr(ascii_val)
+         
+    # Convert the list of characters back to a string
+    return "".join(char_list)
+ 
+ 
+# Driver Code
+input_str = input()
+k_value = 3
+output_str = replace_characters(input_str, k_value)
+print(output_str)
