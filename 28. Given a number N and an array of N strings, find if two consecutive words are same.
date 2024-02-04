@@ -1,0 +1,26 @@
+'''
+Given a number N and an array of N strings, find if two consecutive words are same.
+Input Size : N <= 1000
+Sample Testcase :
+INPUT
+5
+code
+overload
+vishal
+sundar
+anish
+OUTPUT
+no
+'''
+n=int(input())
+b=False 
+arr=[]
+for i in range(0,n):
+    s=input()
+    arr.append(s)
+    dup = {x for x in arr if arr.count(x) > 1}   
+
+if len(dup)!=0:
+    print("yes")
+else:
+    print("no")
