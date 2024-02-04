@@ -1,0 +1,26 @@
+'''
+Given 2 numbers N and K followed by N elements,print the number of repetition of K otherwise print '-1' if the element not found.
+Sample Testcase :
+INPUT
+6 2
+1 2 3 5 7 8
+OUTPUT
+0
+'''
+N,K=input().split()
+num=input().split()
+count=0
+list1=[]
+for i in range(len(num)-1):
+    if num[i]==K: 
+        list1.append(num[i])
+        count+=1
+    else:
+        count=0
+
+if len(list1)==1:
+    print(0)
+elif(len(list1)>=2):
+    print(len(list1))
+else:
+    print(-1)
