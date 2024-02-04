@@ -1,0 +1,16 @@
+'''
+Given a string and a number K.Print every kth character from the beginning.
+Sample Testcase :
+INPUT
+string 3
+OUTPUT
+r g
+'''
+
+
+a=input().split()
+b=a[0]
+c=[]
+for i in range(int(a[1])-1,len(b),int(a[1])):
+  c.append(b[i])
+print(*c)
