@@ -1,0 +1,25 @@
+'''
+Given a string 'S' swap the even and odd characters starting from index 1(Assume the index starts from 0).
+Input Size : |s| <= 10000000(complexity O(n))
+Sample Testcase :
+INPUT
+codekata
+OUTPUT
+ocedakat
+'''
+S = input()
+s=[]
+for x in S:
+    s.append(x)
+
+i = 0
+while i < s.__len__() - 1:
+    t = s[i]
+    s[i] = s[i + 1]
+    s[i + 1] = t
+    i = i + 2
+
+new=""
+for x in s:
+    new=new+x
+print(new)
