@@ -1,0 +1,50 @@
+'''
+You are given an array. Your task is to sort the array in given manner. Print the elements in increasing order of the frequency. If frequency is same print smaller one first.
+
+Input Description:
+You are given a number ‘n’. Then in next line n space separated numbers.
+
+Output Description:
+Print the array as mentioned
+
+Sample Input :
+4
+1 1 3 2
+Sample Output :
+2 3 1
+'''
+#taking number of elements as input
+n = int(input())
+# taking the list of number as input
+arr= list(map(int,input().split()))
+
+#importing the library for getting the counts of the elements
+from collections import Counter 
+
+def frequencySort(nums): 
+    cn = Counter(nums)
+    #alternatively this can be done using dict also
+    # dict1 = {}
+    # for i in nums:
+    #     dict1[i]=nums.count(i)
+    # for k, v in sorted(dict1.items(), key = lambda kv: (kv[1],kv[0])): 
+    #     out.append(v*[k]) 
+    
+    #making a 2-dimensional array to store the values
+    out = [] 
+    for k, v in sorted(cn.items(), key = lambda kv: (kv[1],kv[0])): 
+        out.append(v*[k])
+    
+    # this gives the one-dimensional array   
+    o = [] 
+    for i in out: 
+        o+= i
+        
+    #finally getting all the unique values from the array
+    final = []
+    for i in o:
+        if i not in final:
+            final.append(i)
+    return final
+
+print(*frequencySort(arr))
