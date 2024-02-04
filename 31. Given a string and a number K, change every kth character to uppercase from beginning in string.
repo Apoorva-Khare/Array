@@ -1,0 +1,26 @@
+'''
+Given a string and a number K, change every kth character to uppercase from beginning in string.
+Sample Testcase :
+INPUT
+string 2
+OUTPUT
+sTrInG
+'''
+
+my_str, num = input().split()
+
+original_num = int(num) # the actual k
+num = int(num) # k is assigned to a variable
+
+if num > 0:
+    # when k > 0
+    while num <= len(my_str):
+        # loop continues till num == len(string)
+        my_str = my_str.replace(my_str[num-1],my_str[num-1].upper()) # replace kth element with uppercase
+        num += original_num # keep adding the actual k to variable num
+
+    print(my_str)
+
+else: 
+    # when k < 0
+    print(my_str)
